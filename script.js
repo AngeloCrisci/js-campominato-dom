@@ -31,6 +31,8 @@ button.addEventListener('click' , function (){
     // ! Blocco l'evento 
     event.preventDefault();
 
+    grids.innerHTML = '';
+
     button.innerText = 'Ricomincia';
 
     // Creo le celle
