@@ -27,6 +27,12 @@ function generateBombs (totalGrids){
     return bombs;
 }
 
+// Funzione per fine partita
+const endGame = (score, hasWon = false) => {
+    const result = hasWon ? 'vinto' : 'perso'
+    alert (`Hai ${result} , hai totalizzato ${score} punti`)
+}
+
 //* FASE DI PREPARAZIONE
 // Recupero gli elementi
 
@@ -75,12 +81,15 @@ button.addEventListener('click' , function (){
             console.log(`Hai perso, hai totalizzato ${score} punti`)
             grid.innerText = '',
             grid.classList.add('bomb')
+
+            // Fine partite
+
+            endGame(score)
         } else {
             score++;
             scoreElement.innerText = score;
-            if(score === totalScore){
-                console.log(`Hai vinto , hai totalizzato ${score} punti`)
-            }
+            if(score === totalScore) endGame (score , true);
+            
         }
         
 
