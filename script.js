@@ -31,6 +31,7 @@ function generateBombs (totalGrids){
 const endGame = (score, hasWon = false) => {
     const result = hasWon ? 'vinto' : 'perso'
     alert (`Hai ${result} , hai totalizzato ${score} punti`)
+    isGameOver = false;
 }
 
 //* FASE DI PREPARAZIONE
@@ -48,6 +49,7 @@ let score = 0;
 const rows = 9;
 const cols = 9;
 const totalGrids = 100;
+let isGameOver = false;
 const totalScore = totalGrids - totalBombs; 
 
 // Creo le bombe
@@ -73,7 +75,7 @@ button.addEventListener('click' , function (){
 
         grid.addEventListener('click', function (){
         console.log(i + 1)
-        if(grid.classList.contains('active')) return;
+        if(isGameOver === true || grid.classList.contains('active')) return;
            else {
              grid.classList.add('active') 
            }
