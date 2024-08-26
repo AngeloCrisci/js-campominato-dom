@@ -21,7 +21,7 @@ function generateBombs (totalGrids){
 
     while(bombs.length < totalBombs){
         const randomNumber = Math.floor(Math.random() * totalGrids) + 1;
-        bombs.push(randomNumber);
+        if (!bombs.includes(randomNumber)) bombs.push(randomNumber);
     }
 
     return bombs;
