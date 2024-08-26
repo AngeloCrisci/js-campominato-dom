@@ -64,9 +64,15 @@ button.addEventListener('click' , function (){
         const grid = createGrid(i + 1);
         grids.appendChild(grid);
 
-    grid.addEventListener('click', function (){
+        grid.addEventListener('click', function (){
         console.log(i + 1)
         if(grid.classList.contains('active')) return;
+
+        if(bombs.includes(i + 1)){
+            console.log('Hai perso')
+            grid.innerText = '',
+            grid.classList.add('bomb')
+        }
         grid.classList.add('active')
 
         score++;

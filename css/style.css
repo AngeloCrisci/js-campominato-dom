@@ -82,3 +82,6 @@ header {
     background-color: green;
 }
 
+.grid.active.bomb {
+    background-color: red;
+}
