@@ -16,8 +16,15 @@ function createGrid(content) {
 
 // Funzione per creare le bombe
 
-function generateBombs(){
+function generateBombs (totalGrids){
+    const bombs = [];
 
+    while(bombs.length < totalBombs){
+        const randomNumber = Math.floor(Math.random() * totalGrids) + 1;
+        bombs.push(randomNumber);
+    }
+
+    return bombs;
 }
 
 //* FASE DI PREPARAZIONE
@@ -30,10 +37,16 @@ const scoreElement = document.getElementById('score')
 //* IMPOSTAZIONI INIZIALI
 
 // (PER BONUS)
+const totalBombs = 16;
 let score = 0;
 const rows = 9;
 const cols = 9;
-const totalGrids = rows + cols;
+const totalGrids = 100;
+
+// Creo le bombe
+
+const bombs = generateBombs(totalGrids , totalBombs);
+console.log(bombs);
 
 // Aggiungo Button più creazioni delle griglie
 
@@ -47,7 +60,7 @@ button.addEventListener('click' , function (){
 
     // Creo le celle
     
-    for( let i = 0; i < 100; i++){
+    for( let i = 0; i < totalGrids ; i++){
         const grid = createGrid(i + 1);
         grids.appendChild(grid);
 
