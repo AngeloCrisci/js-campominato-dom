@@ -42,6 +42,7 @@ let score = 0;
 const rows = 9;
 const cols = 9;
 const totalGrids = 100;
+const totalScore = totalGrids - totalBombs; 
 
 // Creo le bombe
 
@@ -69,14 +70,19 @@ button.addEventListener('click' , function (){
         if(grid.classList.contains('active')) return;
 
         if(bombs.includes(i + 1)){
-            console.log('Hai perso')
+            console.log(`Hai perso, hai totalizzato ${score} punti`)
             grid.innerText = '',
             grid.classList.add('bomb')
+        } else {
+            score++;
+            scoreElement.innerText = score;
+            if(score === totalScore){
+                console.log(`Hai vinto , hai totalizzato ${score} punti`)
+            }
         }
-        grid.classList.add('active')
+        grid.classList.add('active') 
 
-        score++;
-        scoreElement.innerText = score;
+       
     })
 }
 })
