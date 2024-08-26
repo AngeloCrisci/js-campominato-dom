@@ -1,0 +1,84 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Generics */
+
+body {
+    font-family: sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 800;
+}
+
+p {
+    display: inline-block;
+}
+
+#main-content {
+    background-color: #7FFFD4;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+
+/* Utils */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+#grids {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    width: 900px;
+    height: 1200px;
+}
+
+.grid {
+    height: calc(100% / 10);
+    flex-basis: calc(100% / 10);
+    border: 1px black solid;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.grid.active {
+    background-color: green;
+}
+
