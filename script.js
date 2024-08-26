@@ -53,6 +53,7 @@ button.addEventListener('click' , function (){
 
     grid.addEventListener('click', function (){
         console.log(i + 1)
+        if(grid.classList.contains('active')) return;
         grid.classList.add('active')
 
         score++;
