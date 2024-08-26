@@ -5,6 +5,8 @@ console.log('JS OK')
 
 //* FUNZIONI
 
+// Funzione per creare celle
+
 function createGrid(content) {
     const grid = document.createElement('div');
     grid.className = 'grid';
@@ -12,15 +14,23 @@ function createGrid(content) {
     return grid;
 }
 
+// Funzione per creare le bombe
+
+function generateBombs(){
+
+}
+
 //* FASE DI PREPARAZIONE
 // Recupero gli elementi
 
 const button = document.getElementById('play-button')
 const grids = document.getElementById('grids')
+const scoreElement = document.getElementById('score')
 
 //* IMPOSTAZIONI INIZIALI
 
 // (PER BONUS)
+let score = 0;
 const rows = 9;
 const cols = 9;
 const totalGrids = rows + cols;
@@ -44,7 +54,9 @@ button.addEventListener('click' , function (){
     grid.addEventListener('click', function (){
         console.log(i + 1)
         grid.classList.add('active')
-        
+
+        score++;
+        scoreElement.innerText = score;
     })
 }
 })
