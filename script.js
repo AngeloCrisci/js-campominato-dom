@@ -68,7 +68,9 @@ button.addEventListener('click' , function (){
         grid.addEventListener('click', function (){
         console.log(i + 1)
         if(grid.classList.contains('active')) return;
-
+           else {
+             grid.classList.add('active') 
+           }
         if(bombs.includes(i + 1)){
             console.log(`Hai perso, hai totalizzato ${score} punti`)
             grid.innerText = '',
@@ -80,7 +82,7 @@ button.addEventListener('click' , function (){
                 console.log(`Hai vinto , hai totalizzato ${score} punti`)
             }
         }
-        grid.classList.add('active') 
+        
 
        
     })
